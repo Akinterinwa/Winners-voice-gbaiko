@@ -1,0 +1,147 @@
+.member-details-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #3b82f6;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .back-button:hover {
+    text-decoration: underline;
+  }
+  
+  .member-card {
+    display: flex;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    padding: 20px;
+    gap: 30px;
+  }
+  
+  .member-image-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .member-large-image {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #d1d5db;
+  }
+  
+  .member-info-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .member-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 10px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #4b5563;
+  }
+  
+  .info-group p {
+    margin: 4px 0;
+    font-size: 1rem;
+    color: #374151;
+  }
+  
+  .not-found {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 100px;
+  }
+  
+  /* Fade-in animation */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Emergency contact standout */
+  .emergency-contact-card {
+    background-color: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 60%;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .member-card {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .member-large-image {
+      width: 200px;
+      height: 300px;
+    }
+  
+    .member-info-section {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .info-group p {
+      font-size: 0.95rem;
+    }
+  
+    .section-title {
+      font-size: 1.3rem;
+    }
+  
+    .back-button {
+      font-size: 16px;
+    }
+    .emergency-contact-card {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .member-large-image {
+      width: 150px;
+      height: 200px;
+    }
+  
+    .page-title {
+      font-size: 2rem;
+    }
+  }
+  
