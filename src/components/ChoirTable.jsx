@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import members from '../data/members';
 import '../styles/choirtable.css';
 import Birthday from './Birthday';
+import VerseOfTheDay from './VerseOfTheDay';
+import ChoirExecutives from './ChoirExecutives';
 
 const ChoirTable = () => {
   const location = useLocation();
@@ -35,9 +37,10 @@ const ChoirTable = () => {
   };
 
   return (
+    <>
     <div className="choir-page-wrapper">
       <div className="choir-table-section">
-        <h1 className="page-title">Choir Members</h1>
+        <h1 className="page-title">Winners Voice LFC Dashboard</h1>
 
         <div className="search-container">
           <input
@@ -56,7 +59,7 @@ const ChoirTable = () => {
                 <th></th>
                 <th>Full Name</th>
                 <th>Voice Part</th>
-                <th>Phone Number</th>
+                {/* <th>Phone Number</th> */}
               </tr>
             </thead>
             <tbody>
@@ -74,7 +77,7 @@ const ChoirTable = () => {
                     </Link>
                   </td>
                   <td>{member.VoicePart}</td>
-                  <td>{member.PhoneNumber}</td>
+                  {/* <td>{member.PhoneNumber}</td> */}
                 </tr>
               ))}
             </tbody>
@@ -95,9 +98,17 @@ const ChoirTable = () => {
           </div>
         )}
       </div>
-
-      <Birthday upcomingBirthdays={members} />
     </div>
+    
+    <div className="info-widgets-container">
+    <VerseOfTheDay />
+
+    <Birthday upcomingBirthdays={members} />
+
+    <ChoirExecutives />
+    </div>
+
+    </>
   );
 };
 

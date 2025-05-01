@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import ChoirTable from './components/ChoirTable';
 import MemberDetails from './components/MemberDetails';
 import './styles/choirtable.css';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/member/:id" element={<MemberDetails />} />
         <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

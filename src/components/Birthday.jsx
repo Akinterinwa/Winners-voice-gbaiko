@@ -11,7 +11,15 @@ const Birthday = ({ upcomingBirthdays = [] }) => {
         const [month, day] = member.Dob.split('/').map(Number);
         const birthdayThisYear = new Date(currentYear, month - 1, day);
         
-        if (birthdayThisYear < today) {
+        // if (birthdayThisYear < today) {
+        //   birthdayThisYear.setFullYear(currentYear + 1);
+        // }
+
+                const isToday =
+          birthdayThisYear.getDate() === today.getDate() &&
+          birthdayThisYear.getMonth() === today.getMonth();
+
+        if (!isToday && birthdayThisYear < today) {
           birthdayThisYear.setFullYear(currentYear + 1);
         }
         

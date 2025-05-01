@@ -1,0 +1,64 @@
+
+/* executives.css */
+.executives-container {
+background: #fff;
+padding: 1.5rem;
+margin-top: 1rem;
+border-radius: 8px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+width: fit-content;
+}
+
+.executives-title {
+font-size: 1.3rem;
+margin-bottom: 1rem;
+color: #2d3e50;
+}
+
+.executives-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.executive-card {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-bottom: 1rem;
+padding: 0.75rem;
+border-radius: 6px;
+background-color: #f9f9f9;
+transition: background-color 0.3s;
+}
+
+.executive-card:hover {
+background-color: #eef2f7;
+}
+
+.executive-photo {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+object-fit: cover;
+border: 2px solid #4a90e2;
+}
+
+.executive-name {
+font-weight: 600;
+color: #34495e;
+margin: 0;
+}
+
+.executive-role {
+font-size: 0.9rem;
+color: #7f8c8d;
+margin: 0.2rem 0 0 0;
+}
+
+    /* Small screens (table becomes scrollable) */
+    @media (max-width: 368px) {
+        .executives-container {
+            margin-left: auto;
+        }
+    }
