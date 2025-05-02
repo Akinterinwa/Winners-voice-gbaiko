@@ -1,7 +1,7 @@
-// ChoirExecutives.js
 import React from 'react';
 import '../styles/executives.css';
 import members from '../data/members';
+import { Link } from 'react-router-dom'; // Add this
 
 const executiveRoles = [
   { id: 16, role: "Choir Coordinator" },
@@ -27,11 +27,16 @@ const ChoirExecutives = () => {
       <ul className="executives-list">
         {executives.map(exec => (
           <li key={exec.id} className="executive-card">
-            <img src={exec.photo} alt={exec.name} className="executive-photo" />
-            <div>
-              <h4 className="executive-name">{exec.name}</h4>
-              <p className="executive-role">{exec.role}</p>
-            </div>
+            <Link 
+              to={`/member/${exec.id}?page=2`} 
+              style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}
+            >
+              <img src={exec.photo} alt={exec.name} className="executive-photo" />
+              <div>
+                <h4 className="executive-name">{exec.name}</h4>
+                <p className="executive-role">{exec.role}</p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>
