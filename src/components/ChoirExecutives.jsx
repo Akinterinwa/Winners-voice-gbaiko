@@ -4,8 +4,8 @@ import members from '../data/members';
 import { Link } from 'react-router-dom'; // Add this
 
 const executiveRoles = [
-  { id: 16, role: "Choir Coordinator" },
-  { id: 3, role: "Assistant Coordinator" },
+  { id: 23, role: "Choir Leader" },
+  { id: 8, role: "Assistant Choir Leader" },
   { id: 5, role: "Music Director" },
   { id: 7, role: "Secretary" },
 ];
