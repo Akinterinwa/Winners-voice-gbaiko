@@ -20,7 +20,7 @@ const FullDevotion = () => {
 
   return (
     <div className="verse-container enhanced-verse">
-      <h2 className="verse-title">📖 Full Devotion</h2>
+      <h2 className="verse-title">📖 Daily Devotion</h2>
       <h3 className="devotion-title">{devotion.title}</h3>
       <div className="devotion-paragraph">
         {paragraphs.map((p, idx) => (

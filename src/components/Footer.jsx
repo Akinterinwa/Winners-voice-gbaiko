@@ -17,17 +17,17 @@ const styles = {
 footer: {
     marginTop: '50px',
     textAlign: 'center',
-    padding: '1.2rem',
-    background: '#9e9e9e00',
-    color: '#444',
+    padding: '1rem',
+    background: '#f5f5f5',
+    color: '#666',
     fontFamily: `'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`,
-    fontSize: '0.95rem',
+    fontSize: '0.8rem',
 },
 
 link: {
-    color: '#423F41FF',
-    fontWeight: 600,
-    transition: 'color 0.3s ease',
+    color: '#666',
+    fontWeight: 400,
+    fontSize: '0.8rem', 
     textDecoration: 'underline',
 },
 };
