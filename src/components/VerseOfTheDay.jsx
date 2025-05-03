@@ -1,37 +1,59 @@
 import React, { useEffect, useState } from 'react';
+import Devotion from '../data/dailyDevotion.json';
 import '../styles/verseoftheday.css';
+import { useNavigate } from 'react-router-dom';
 
 const VerseOfTheDay = () => {
-  const [verse, setVerse] = useState('');
-  const [reference, setReference] = useState('');
-  const [verseURL, setVerseURL] = useState('');
-
-  // Optional: fallback devotion content
-  // const title = "Faith Over Fear";
-  // const devotion = "When we face trials, fear often whispers that we’re alone and powerless. But with Christ, we are empowered to rise above every challenge. Trust in Him today and let His strength carry you.";
+  const [devotion, setDevotion] = useState({ title: '', body: '' });
+  const [showFullContent, setShowFullContent] = useState(false);
 
   useEffect(() => {
-    fetch("https://beta.ourmanna.com/api/v1/get/?format=json")
-      .then(response => response.json())
-      .then(data => {
-        const details = data.verse.details;
-        setVerse(details.text);
-        setReference(details.reference);
-        setVerseURL(details.verseurl);
-      })
-      .catch(error => {
-        console.error("Error fetching verse:", error);
-        // fallback in case of error
-        setVerse("I can do all things through Christ who strengthens me.");
-        setReference("Philippians 4:13");
-      });
+    const today = new Date();
+    const dayOfYear = Math.floor(
+      (today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24
+    );
+    const index = (dayOfYear - 1) % Devotion.length;
+    setDevotion(Devotion[index]);
   }, []);
 
+  // Get preview text (first 150 characters)
+  const previewText = devotion.body 
+    ? devotion.body.substring(0, 150) + '...' 
+    : '';
+
+  const paragraphs = devotion.body?.split('\n\n') || [];
+  const navigate = useNavigate();
+
   return (
-    <div className="verse-container enhanced-verse">
-      <h2 className="verse-title">📖 Verse of the Day</h2>
-      <h3 className="devotion-title">{reference}</h3>
-      <p className="devotion-paragraph">"{verse}"</p>
+    <div className="verse-container enhanced-verse navigate">
+      <h2 className="verse-title">📖 Daily Devotion</h2>
+      <h3 className="devotion-title">{devotion.title}</h3>
+      
+      {showFullContent ? (
+        <div className="devotion-paragraph">
+          {paragraphs.map((paragraph, index) => (
+            <p key={index} className="devotion-paragraph">
+              {paragraph}
+            </p>
+          ))}
+          <button 
+            onClick={() => setShowFullContent(false)}
+            className="view-toggle"
+          >
+            Show Less
+          </button>
+        </div>
+      ) : (
+        <div className="devotion-content">
+          <p>{previewText}</p>
+          <button 
+  onClick={() => navigate('/devotion', { state: { devotion } })}
+  className="view-toggle"
+>
+  View All
+</button>
+        </div>
+      )}
     </div>
   );
 };

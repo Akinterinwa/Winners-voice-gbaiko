@@ -1,8 +1,15 @@
 import { useParams, Link, useLocation } from 'react-router-dom';
 import choirMembers from '../data/members';
 import '../styles/memberdetails.css';
+import { useEffect } from 'react';
 
 export default function MemberDetails() {
+
+   // Scroll to top on mount
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { id } = useParams();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);

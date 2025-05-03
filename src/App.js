@@ -3,6 +3,7 @@ import ChoirTable from './components/ChoirTable';
 import MemberDetails from './components/MemberDetails';
 import './styles/choirtable.css';
 import Footer from './components/Footer';
+import FullDevotion from './components/FullDevotion';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/choir-members" element={<ChoirTable />} />
         <Route path="/member/:id" element={<MemberDetails />} />
         <Route path="*" element={<h1>Page Not Found</h1>} />
+        <Route path="/devotion" element={<FullDevotion />} />
       </Routes>
       <Footer />
     </Router>

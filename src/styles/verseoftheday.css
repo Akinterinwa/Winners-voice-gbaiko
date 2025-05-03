@@ -42,13 +42,48 @@
     text-align: center;
     margin: 0.5rem 0;
   }
+  .devotion-content {
+    font-size: 20px;
+  }
   
   .devotion-paragraph {
-    font-size: 25px;
+    font-size: 16px;
     line-height: 1.6;
     color: #555;
     text-align: center;
   }
+
+    .navigate {
+      margin-top: 60px;
+    }
+
+
+  /* For Option 1 */
+.view-toggle {
+  background: none;
+  border: none;
+  color: #4a6fa5;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.view-toggle:hover {
+  text-decoration: underline;
+}
+
+/* For Option 2 */
+.view-all-link {
+  color: #4a6fa5;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
   
   
     /* Small screens (table becomes scrollable) */

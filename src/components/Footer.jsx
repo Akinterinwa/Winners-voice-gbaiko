@@ -7,7 +7,7 @@ return (
         &copy; Developed by{' '}
         <a href="https://linktr.ee/oluwanifemi_akin" target="_blank" rel="noopener noreferrer" style={styles.link}>
         Akinterinwa Oluwanifemi
-        </a>.
+        </a>
     </p>
     </footer>
 );
@@ -26,9 +26,9 @@ footer: {
 
 link: {
     color: '#423F41FF',
-    textDecoration: 'none',
     fontWeight: 600,
     transition: 'color 0.3s ease',
+    textDecoration: 'underline',
 },
 };
 
