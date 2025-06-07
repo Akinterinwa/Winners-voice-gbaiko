@@ -5,9 +5,14 @@ import { Link } from 'react-router-dom'; // Add this
 
 const executiveRoles = [
   { id: 23, role: "Choir Leader" },
-  { id: 8, role: "Assistant Choir Leader" },
-  { id: 5, role: "Music Director" },
-  { id: 7, role: "Secretary" },
+  // { id: 8, role: "Treasurer" },
+  // { id: 5, role: "Fin Sec." },
+  { id: 5, role: "Welfare" },
+  // { id: 7, role: "Prayer" },
+  { id: 15, role: "Crack Team lead" },
+  { id: 43, role: "Admin Officer" },
+  { id: 35, role: "Costume Leader" },
+  // { id: 7, role: "Costume Leader" },
 ];
 
 const ChoirExecutives = () => {
